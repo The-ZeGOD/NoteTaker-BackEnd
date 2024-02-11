@@ -1,6 +1,5 @@
 const { Client } = require("pg");
 
-console.log(process.env.SECRET_KEY);
-const client = new Client("postgres://xwumtnbf:lNE5LElgPd9k3lJBwzRB9o0IBBMswPqm@rain.db.elephantsql.com/xwumtnbf");
+const client = new Client(process.env.DB_URL);
 
 module.exports = client;
