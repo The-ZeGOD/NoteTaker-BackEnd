@@ -1,8 +1,8 @@
 require("dotenv").config();
-
 const express = require("express");
 const cors = require("cors");
 const authRoutes = require("./routes/auth");
+const noteRoutes = require("./routes/notes")
 const client = require("./configs/database");
 
 const app = express();
@@ -24,7 +24,7 @@ app.get('/', (req, res)=>{
 })
 
 app.use("/auth", authRoutes);
-// app.use("/notes", noteRoutes);
+app.use("/note", noteRoutes);
 
 app.listen(port, ()=>{
     console.log(`Server is running on port: ${port}`);
